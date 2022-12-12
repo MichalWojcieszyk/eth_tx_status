@@ -23,7 +23,7 @@ defmodule EthTxStatus.MixProject do
   def application do
     [
       mod: {EthTxStatus.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :inets, :ssl]
     ]
   end
 
@@ -38,7 +38,9 @@ defmodule EthTxStatus.MixProject do
     [
       {:phoenix_pubsub, "~> 2.0"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false}
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:jason, "~> 1.4"},
+      {:mox, "~> 1.0", only: :test}
     ]
   end
 
