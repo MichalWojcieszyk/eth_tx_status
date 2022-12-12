@@ -17,7 +17,7 @@ defmodule EthTxStatusWeb.Router do
   scope "/", EthTxStatusWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/eth_tx_status", ConfirmationLive
   end
 
   # Other scopes may use custom stacks.
