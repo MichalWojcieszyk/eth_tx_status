@@ -3,6 +3,9 @@ defmodule EthTxStatus.HTTPClientImpl do
   Implementation of the HTTPClient behaviour
   """
 
+  # There are two separate behaviours for HTTPClient and HTTPLibrary to allow easily
+  # switching to other HTTP library when necessary and to allow testing request response mapping code.
+  # It should be also fine to simplify it and use only one behaviour.
   @behaviour EthTxStatus.HTTPClientBehaviour
 
   @impl EthTxStatus.HTTPClientBehaviour

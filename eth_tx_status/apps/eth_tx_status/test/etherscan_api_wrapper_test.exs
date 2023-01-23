@@ -8,6 +8,10 @@ defmodule EthTxStatus.EtherscanApiWrapperTest do
 
   setup :verify_on_exit!
 
+  # Some of the tests have been written using property-based custom approach
+  # with some range predefined. It gives some additional safety and works fine
+  # with app this size, although when the app grows together with tests execution time,
+  # testing only edge values should also be good enough here.
   describe "validate_tx_hash_format/1" do
     test "returns ok tuple when format is correct" do
       Enum.each(1..100, fn _ ->
